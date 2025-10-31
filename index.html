@@ -2,25 +2,43 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Bisistha Patra Portfolio</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Bisistha Patra Landing Page</title>
 <style>
   body {
-    background-color: #000; /* Black background */
+    background-color: #000;
     margin: 0;
-    height: 100vh; /* Full viewport height */
+    height: 100vh;
     display: flex;
-    justify-content: center; /* Center horizontally */
-    align-items: center; /* Center vertically */
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-family: Arial, sans-serif;
+    text-align: center;
   }
   h1 {
-    color: #fff; /* White text */
-    font-family: Arial, sans-serif;
-    font-size: 2.5rem;
+    font-size: 3rem;
+    margin-bottom: 20px;
+  }
+  .profile-image {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid white;
+    margin-bottom: 20px;
+  }
+  .quote {
+    font-size: 1.25rem;
+    max-width: 400px;
+    line-height: 1.4;
   }
 </style>
 </head>
 <body>
   <h1>Bisistha Patra</h1>
+  <img src="C:\Users\b_pat\Desktop\Projects\portfolio\portfolio.png" alt="Bisistha Patra" class="profile-image" />
+  <p class="quote">Building AI that bridges data, reasoning, and creativity.</p>
 </body>
 </html>
