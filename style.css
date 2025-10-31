@@ -1,7 +1,9 @@
 /* Custom Gradient Definition (Blue-to-Purple) */
 :root {
     --primary-gradient: linear-gradient(90deg, #00C6FF, #0072FF, #8A2BE2); /* Blue to Electric Blue to Blue Violet */
+    --image-rim-color: #8A2BE2; /* Blue Violet / Purple for Image Rim */
     --gradient-glow: 0 0 10px #00C6FF, 0 0 20px #8A2BE2;
+    --image-rim-glow: 0 0 30px 10px rgba(138, 43, 226, 0.7); /* Purple Glow */
     --white-text: #FFFFFF;
     --translucent-bg: rgba(0, 100, 100, 0.2); /* Dark Translucent Blue/Teal */
     --translucent-white: rgba(255, 255, 255, 0.1); /* Light/White Translucent for About */
@@ -88,14 +90,14 @@ body {
 /* --- Scroll Animations (Simulated) --- */
 .scroll-section {
     padding: 100px 5%;
-    min-height: 100vh;
+    min-height: auto; /* Allows content to define height */
     opacity: 1;
     transition: opacity 1s ease-out, transform 1s ease-out;
 }
 
 /* --- Home Page Animations (CSS @keyframes) --- */
 /* Initial state for elements */
-.hero-home h1, .profile-image-container, .tag-box, .hero-home p {
+.hero-home h1, .profile-image-container, .tag-box-small, .hero-home p {
     opacity: 0;
     transform: translateY(20px);
 }
@@ -117,7 +119,7 @@ body {
     animation: fadeInSlide 1s ease-out 1.2s forwards;
 }
 
-.tag-box.animate-3 {
+.tag-box-small.animate-3 {
     animation: fadeInSlide 1s ease-out 1.9s forwards;
 }
 
@@ -204,38 +206,35 @@ header nav ul li a:hover {
     margin-bottom: 20px;
 }
 
-/* New Tag Box Styling */
-.tag-box {
-    display: inline-flex;
+/* Reverted Small Tag Box Styling */
+.tag-box-small {
+    display: flex;
     flex-wrap: wrap;
     gap: 10px;
     max-width: 600px;
-    padding: 15px 20px;
-    font-size: 1.1rem; /* Same size as the p line */
-    font-weight: 500;
+    margin-top: 15px;
 }
 
-.tag-item {
-    padding: 5px 12px;
-    border-radius: 20px;
-    background-color: rgba(0, 0, 0, 0.4);
-    border: 1px solid rgba(0, 198, 255, 0.5);
+.tag-item-small {
+    padding: 8px 15px;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-weight: 500;
     white-space: nowrap;
 }
 
-
-/* Image Size and Glow Increase */
+/* Image Size and Glow (Purple Rim) */
 .profile-image-container {
     position: absolute;
     right: 10%;
-    width: 380px; /* Increased Size */
-    height: 380px; /* Increased Size */
+    width: 380px; 
+    height: 380px; 
     border-radius: 50%;
     overflow: hidden;
     z-index: 10;
-    /* Increased Glow on the rim */
-    box-shadow: 0 0 45px 10px rgba(0, 100, 100, 0.9), 0 0 15px rgba(0, 198, 255, 0.5); 
-    border: 5px solid rgba(0, 100, 100, 0.5);
+    /* Purple Glow */
+    box-shadow: var(--image-rim-glow); 
+    border: 5px solid var(--image-rim-color);
 }
 
 .profile-image {
@@ -246,20 +245,21 @@ header nav ul li a:hover {
 
 /* --- Section 2: About (Redesigned with Translucent Slide) --- */
 .about-section {
-    min-height: 100vh;
-    padding: 0; /* Remove default padding to allow slide to fill */
+    min-height: auto;
+    padding: 0;
     display: flex;
     justify-content: center;
     align-items: center;
+    margin: 100px 0; /* Add vertical space */
 }
 
 .about-main-slide {
     width: 90%;
     max-width: 1400px;
-    padding: 80px 5%;
+    padding: 50px 5%; /* Reduced padding */
     background-color: var(--translucent-white);
     border-radius: 20px;
-    box-shadow: var(--about-rim-glow); /* Blue rim glow */
+    box-shadow: var(--about-rim-glow); 
     border: 1px solid rgba(0, 114, 255, 0.3);
 }
 
@@ -269,11 +269,10 @@ header nav ul li a:hover {
     max-width: 1000px;
     margin: 0 auto;
     text-align: left;
-    gap: 30px;
+    gap: 25px; /* Reduced gap */
 }
 
 .about-box {
-    /* New styling for the two rectangular boxes */
     background-color: rgba(0, 0, 0, 0.3);
     padding: 25px;
     border-radius: 10px;
@@ -294,7 +293,26 @@ header nav ul li a:hover {
 }
 
 
-/* --- Section 3: Skills & Projects --- */
+/* --- Section 3: Skills & Projects (Compact/Reverted) --- */
+
+/* Project List (Compact Style) */
+.projects-compact-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.project-compact-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 25px;
+    min-height: 300px; /* Gives projects a uniform height */
+    /* Inherits translucent-bg styling */
+}
+
 .impact-oneliner {
     font-size: 1.2rem;
     font-style: italic;
@@ -302,11 +320,16 @@ header nav ul li a:hover {
     margin-bottom: 15px !important;
 }
 
-.projects-list ul {
+.projects-compact-list ul {
     list-style: disc;
     padding-left: 20px;
     margin-top: 15px;
-    margin-bottom: 15px;
+}
+
+.project-compact-item ul li {
+    margin-bottom: 5px;
+    line-height: 1.3;
+    font-size: 0.95rem;
 }
 
 .project-links {
@@ -315,33 +338,52 @@ header nav ul li a:hover {
     gap: 15px;
 }
 
-.project-details ul li {
-    margin-bottom: 5px;
-    line-height: 1.3;
-}
-
-/* Inherited project layout styles... */
-
-/* --- Section 4: Achievements --- */
-.achieve-group {
-    max-width: 100%;
-}
-
-.achieve-item .project-visual {
-    /* Ensure visual area centers the image */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 20px;
+.github-button {
+    display: inline-block;
+    color: var(--white-text);
     background-color: transparent;
+    padding: 10px 20px;
+    border: 1px solid var(--white-text);
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
 }
 
-.achieve-img {
-    max-width: 100%;
-    max-height: 100%;
-    border-radius: 10px;
-    object-fit: contain;
-    box-shadow: 0 0 10px rgba(0, 114, 255, 0.5); /* Subtle blue shadow for images */
+.github-button:hover {
+    background-color: rgba(0, 100, 100, 0.5);
+    box-shadow: var(--gradient-glow);
+}
+
+
+/* --- Section 4: Achievements (Compact/Reverted) --- */
+.achievements-compact-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.achieve-compact-item {
+    padding: 25px;
+    /* Inherits translucent-bg styling */
+}
+
+.achieve-compact-item h3 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+}
+
+.achieve-compact-item ul {
+    list-style: none;
+}
+
+.achieve-compact-item ul li {
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+    line-height: 1.4;
 }
 
 /* --- Section 5: Blogs & Footer --- */
@@ -349,12 +391,12 @@ header nav ul li a:hover {
     text-align: center;
     max-width: 800px;
     margin: 0 auto;
-    padding-bottom: 20px; /* Reduced padding */
-    min-height: auto; /* Allow height to collapse */
+    padding-bottom: 10px; /* Reduced padding */
+    min-height: auto; 
 }
 
 .footer-quote {
-    padding: 20px 5% 50px 5%; /* Reduced top gap, kept bottom padding */
+    padding: 10px 5% 50px 5%; /* Reduced top gap, kept bottom padding */
     text-align: center;
 }
 
@@ -363,17 +405,47 @@ header nav ul li a:hover {
     font-weight: 600;
 }
 
+/* --- NEW Section 7: Image Gallery --- */
+.gallery-awards {
+    padding-top: 50px; /* Reduced top padding */
+}
+
+.awards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 25px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.award-item {
+    width: 100%;
+    height: 150px; /* Maintain square shape */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(138, 43, 226, 0.5); /* Purple shadow */
+}
+
+.award-img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    border-radius: 5px;
+}
+
 
 /* --- Media Queries (Adaptation) --- */
 @media (max-width: 1200px) {
-    /* Existing stacking rules for projects/achievements remain */
-    .project-item, .achieve-item {
-        flex-direction: column !important;
+    .projects-compact-list {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     }
 }
 
 @media (max-width: 900px) {
-    /* Adjust about page for smaller screens */
     .about-main-slide {
         width: 100%;
         margin: 50px 0;
@@ -386,11 +458,14 @@ header nav ul li a:hover {
         height: 250px;
         right: auto;
     }
-    .tag-box {
-        font-size: 1rem;
+    .tag-box-small {
+        justify-content: center;
     }
-    .project-details ul {
-        padding-left: 15px;
+    .awards-grid {
+        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    }
+    .award-item {
+        height: 100px;
     }
 }
 
@@ -398,13 +473,32 @@ header nav ul li a:hover {
     .hero-info .big-text {
         font-size: 3rem;
     }
-    .tag-box {
-        display: block;
+    .hero-info {
         width: 100%;
+        position: static;
         text-align: center;
-        padding: 10px;
     }
-    .tag-item {
-        margin: 5px;
+    .hero-home {
+        flex-direction: column;
+        justify-content: flex-start;
+        height: auto;
+        min-height: 100vh;
+        padding-top: 100px;
+    }
+    .profile-image-container {
+        position: static;
+        margin: 0 auto 50px auto;
+    }
+    .tag-box-small {
+        justify-content: center;
+    }
+    .projects-compact-list {
+        grid-template-columns: 1fr;
+    }
+    .achievements-compact-list {
+        grid-template-columns: 1fr;
+    }
+    .awards-grid {
+        grid-template-columns: repeat(3, 1fr);
     }
 }
