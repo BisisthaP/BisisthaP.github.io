@@ -1,44 +1,195 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Bisistha Patra Landing Page</title>
-<style>
-  body {
-    background-color: #000;
-    margin: 0;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    color: white;
-    font-family: Arial, sans-serif;
-    text-align: center;
-  }
-  h1 {
-    font-size: 3rem;
-    margin-bottom: 20px;
-  }
-  .profile-image {
-    width: 200px;
-    height: 200px;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 4px solid white;
-    margin-bottom: 20px;
-  }
-  .quote {
-    font-size: 1.25rem;
-    max-width: 400px;
-    line-height: 1.4;
-  }
-</style>
-</head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Bisistha Patra - Portfolio</title>
+    <link rel="stylesheet" href="style.css" />
+    </head>
 <body>
-  <h1>Bisistha Patra</h1>
-  <img src="C:\Users\b_pat\Desktop\Projects\portfolio\portfolio.png" alt="Bisistha Patra" class="profile-image" />
-  <p class="quote">Building AI that bridges data, reasoning, and creativity.</p>
-</body>
+    <div class="container">
+        <video class="backvid" autoplay loop muted playsinline>
+            <source src="assets/video/galaxy.mp4" type="video/mp4" />
+        </video>
+        <div class="cover"></div> <header>
+            <div class="left-nav">
+                <h2>Bisistha Patra</h2>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#about-section">About</a></li>
+                    <li><a href="#skills-projects">Skills & Projects</a></li>
+                    <li><a href="#achievements-section">Achievements</a></li>
+                    <li><a href="#blogs-section">Blogs</a></li>
+                    <li><a href="#" class="resume-button">Resume</a></li>
+                </ul>
+            </nav>
+            <div class="boxicons">
+                </div>
+        </header>
+
+        <section class="hero-home">
+            <div class="hero-info">
+                <h1>
+                    <span class="gradient-text big-text">Bisistha Patra</span>
+                </h1>
+                <p>
+                    Building technical solutions that bridges data, reasoning, and creativity
+                </p>
+            </div>
+            <div class="profile-image-container">
+                <img src="assets/img/portfolio.png" alt="Bisistha Patra Profile" class="profile-image" />
+            </div>
+        </section>
+
+        <section class="about-section scroll-section" id="about-section">
+            <h2 class="section-header gradient-text">About</h2>
+            <div class="about-content">
+                <div class="education-block">
+                    <h3>Education</h3>
+                    <p><strong>University of Hertfordshire (2023 - 2026)</strong></p>
+                    <p>Bachelor of Technology in Applied Computing and Artificial Intelligence</p>
+                    <p>CGPA: 4.00/4.00 (Sem 4 - 9.85/10.00 SGPA)</p>
+                    <p>Relevant Coursework: Machine Learning, Data Engineering & Large-Scale Storage; Data Structures & Algorithms; DevOps & MLOps</p>
+                </div>
+                <div class="bio-paragraph">
+                    <p>I'm an AI/ML innovator who thrives on transforming complex ideas into logical, interactive, and deployable solutions. My expertise is intentionally broad, allowing me to seamlessly transition between Data Analysis (extracting novel insights), AI Engineering (building intelligent systems), and MLOps (ensuring robust, production-ready pipelines).</p>
+                    <p>I approach every technical challenge with an end-to-end mindset. Whether spearheading an LLM Fine-Tuning pipeline or contributing to the automation and controls on the challenging NASA HERC project, my focus is always on creating high-impact, user-friendly results. I am actively seeking more opportunities to bring this comprehensive technical versatility and collaborative drive to a cutting-edge team.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="skills-projects scroll-section" id="skills-projects">
+            
+            <h2 class="section-header gradient-text">Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-card translucent-bg">
+                    <h3 class="gradient-text">Programming Languages</h3>
+                    <p>Python, Java, SQL, Power BI, Streamlit, Shell Scripting</p>
+                </div>
+                <div class="skill-card translucent-bg">
+                    <h3 class="gradient-text">ML & AI Frameworks</h3>
+                    <p>Scikit-learn, Hugging Face, LLM Integration (Gemini)</p>
+                </div>
+                <div class="skill-card translucent-bg">
+                    <h3 class="gradient-text">Modeling</h3>
+                    <p>Decision Trees, Random Forest, Linear and Logistic Regressions</p>
+                </div>
+                <div class="skill-card translucent-bg">
+                    <h3 class="gradient-text">Data Science & Analytics</h3>
+                    <p>NumPy, Pandas, Matplotlib, Seaborn, Power BI, Statistical Modeling</p>
+                </div>
+                <div class="skill-card translucent-bg">
+                    <h3 class="gradient-text">NLP & Generative AI</h3>
+                    <p>GPT-3, BERT, Hugging Face, Sentiment Analysis</p>
+                </div>
+                <div class="skill-card translucent-bg">
+                    <h3 class="gradient-text">Backend & DevOps</h3>
+                    <p>Git, GitHub, GitHub Actions, Docker</p>
+                </div>
+                <div class="skill-card translucent-bg">
+                    <h3 class="gradient-text">Cloud & Platforms</h3>
+                    <p>Google Cloud (GCP) and AWS - Learning</p>
+                </div>
+            </div>
+
+            <h2 class="section-header gradient-text">Projects</h2>
+            <div class="projects-list">
+                <div class="project-item align-right-header">
+                    <div class="project-visual">
+                        </div>
+                    <div class="project-details translucent-bg">
+                        <h3 class="gradient-text">IELTS Speaking Analyzer - Voice AI Agent</h3>
+                        <p class="description-placeholder">This is the description placeholder for the project.</p>
+                        <a href="https://github.com/BisisthaP/IELTS-Speaking-Wrapper" target="_blank" class="github-button">GITHUB</a>
+                    </div>
+                </div>
+
+                <div class="project-item align-left-header">
+                    <div class="project-details translucent-bg">
+                        <h3 class="gradient-text">CrytoGuard - Risk analysis for BitCoin, powered by AI</h3>
+                        <p class="description-placeholder">This is the description placeholder for the project.</p>
+                        <a href="#" target="_blank" class="github-button">GITHUB</a> </div>
+                    <div class="project-visual">
+                         </div>
+                </div>
+
+                <div class="project-item align-right-header">
+                    <div class="project-visual">
+                        </div>
+                    <div class="project-details translucent-bg">
+                        <h3 class="gradient-text">Cyberbullying Sentiment Analysis</h3>
+                        <p class="description-placeholder">This is the description placeholder for the project.</p>
+                        <a href="https://github.com/BisisthaP/Cyberbullying_Analyser" target="_blank" class="github-button">GITHUB</a>
+                    </div>
+                </div>
+
+                <div class="project-item align-left-header">
+                    <div class="project-details translucent-bg">
+                        <h3 class="gradient-text">Olympics Medal Trends Dashboard</h3>
+                        <p class="description-placeholder">This is the description placeholder for the project.</p>
+                        <a href="#" target="_blank" class="github-button">GITHUB</a> </div>
+                    <div class="project-visual">
+                         </div>
+                </div>
+
+                <div class="project-item align-right-header">
+                    <div class="project-visual">
+                        </div>
+                    <div class="project-details translucent-bg">
+                        <h3 class="gradient-text">FitBit Fitness Trends Dashboard</h3>
+                        <p class="description-placeholder">This is the description placeholder for the project.</p>
+                        <a href="#" target="_blank" class="github-button">GITHUB</a> </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="achievements-section scroll-section" id="achievements-section">
+            <h2 class="section-header gradient-text">Achievements</h2>
+            <div class="achievements-list">
+
+                <div class="achieve-group">
+                    <h3 class="gradient-text">Experience</h3>
+                    <div class="achieve-item project-item align-right-header">
+                         <div class="project-visual"></div>
+                         <div class="project-details translucent-bg">
+                            <ul>
+                                <li>Coforge India - AI Fine Tuning Internship - September 2025</li>
+                                <li>NASA HERC 2025 Team Mushak - 2024/25</li>
+                                <li>AI Engineer Intern at GenAI Agency - July 2024</li>
+                            </ul>
+                         </div>
+                    </div>
+                </div>
+
+                <div class="achieve-group">
+                    <h3 class="gradient-text">Certifications & Competitions</h3>
+                    <div class="achieve-item project-item align-left-header">
+                        <div class="project-details translucent-bg">
+                            <ul>
+                                <li>NASA HERC 2025 Team Mushak - 2024/25 - WON 5TH POSITION INTERNATIONALLY</li>
+                                <li>McKinsey Forward Learning program member - October 2025</li>
+                                <li>Goldman Sachs Software Engineering Virtual Experience Program on Forage - May 2024</li>
+                                <li>British Airways Data Science Program on Forage - June 2024</li>
+                                <li>Backpack prediction Competition on Kaggle - February 2025 - 83rd position/3383</li>
+                            </ul>
+                        </div>
+                        <div class="project-visual"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="blogs-section scroll-section" id="blogs-section">
+            <h2 class="section-header gradient-text">Blogs</h2>
+            <p class="blog-text">Beyond the code, I leverage my passion as a writer and information sharer on Medium to explore the intersection of technology, data science, and AI innovation. Join me on my journey.</p>
+            <a href="https://medium.com/@bisisthapatra" target="_blank" class="github-button medium-button">Read on Medium</a>
+        </section>
+
+        <section class="footer-quote">
+            <p class="quote-text white-text glow-text">Inspired by AI, powered by code.</p>
+        </section>
+
+    </div>
+    </body>
 </html>
